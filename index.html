@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#7ec850">
+<title>Bloomville — First Field 🌱</title>
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+<div id="app">
+
+  <header id="hud">
+    <div class="hud-item" id="hud-coins-wrap" title="Coins">🪙<span id="hud-coins">0</span></div>
+    <div class="hud-item" title="Dewdrops">💧<span id="hud-dew">0</span></div>
+    <div class="hud-item" title="Renown">⭐<span id="hud-renown">0</span></div>
+    <div class="hud-item hud-level" title="Farm level"><span id="hud-level">Lv 1</span><div class="xpbar"><div id="hud-xpfill"></div></div></div>
+  </header>
+
+  <main id="scene-wrap">
+    <div id="farm-scene" aria-label="Your farm"></div>
+  </main>
+
+  <div id="pip" aria-hidden="true">
+    <img src="assets/pip-wave.png?v=1" alt="Pip the fairy" draggable="false" data-label="Pip" onerror="__imgFallback(this)">
+    <div class="pip-bubble"></div>
+  </div>
+
+  <div id="fx-layer"></div>
+  <div id="tutorial-highlight"></div>
+
+  <div id="tutorial-bar">
+    <div class="tut-text"></div>
+    <div class="tut-btns">
+      <button class="btn btn-ghost" id="tut-skip">Skip</button>
+      <button class="btn" id="tut-next">Next →</button>
+    </div>
+  </div>
+
+  <div id="panel-veil"></div>
+
+  <section class="panel" id="panel-nursery" aria-label="Potting House">
+    <div class="panel-handle"></div>
+    <h2>🏠 Potting House</h2>
+    <p class="panel-sub">Merge matching plants! Drag one onto its twin — or tap one, then tap the other.</p>
+    <div id="seed-packets"></div>
+    <div id="nursery-board"></div>
+    <div class="nursery-actions">
+      <button class="btn btn-small" id="btn-sell">💰 Sell</button>
+      <button class="btn btn-small" id="btn-solarium">☀️ Solarium</button>
+      <button class="btn btn-small btn-burst" id="btn-burst">🌸 Bloom Burst</button>
+    </div>
+    <p class="panel-tip">Tap a plant to select it — tap again to giggle! 💛 Happy plants sell for +25%.</p>
+  </section>
+
+  <section class="panel" id="panel-stand" aria-label="Farm Stand">
+    <div class="panel-handle"></div>
+    <h2>🧺 Farm Stand</h2>
+    <p class="panel-sub">Visitors post orders. Fill bundles to earn coins, dew &amp; renown!</p>
+    <div id="orders-list"></div>
+  </section>
+
+  <section class="panel" id="panel-solarium" aria-label="Solarium">
+    <div class="panel-handle"></div>
+    <h2>☀️ Solarium</h2>
+    <p class="panel-sub" id="solarium-info"></p>
+    <div id="solarium-slots"></div>
+    <p class="panel-tip">Move tier 4+ plants here from the nursery (tap a plant → ☀️ Solarium). Golden plants earn double!</p>
+  </section>
+
+  <section class="panel" id="panel-codex" aria-label="Codex">
+    <div class="panel-handle"></div>
+    <h2>📖 Codex</h2>
+    <p class="panel-sub" id="codex-progress"></p>
+    <div id="codex-grid"></div>
+  </section>
+
+  <section class="panel" id="panel-menu" aria-label="Menu">
+    <div class="panel-handle"></div>
+    <h2>⚙️ Menu</h2>
+    <div class="menu-grid">
+      <button class="btn" id="btn-landshop">🏞️ Land Shop</button>
+      <button class="btn" id="btn-decorshop">🏡 Decor Shop</button>
+      <button class="btn" id="set-music">🔊 Music</button>
+      <button class="btn" id="set-sfx">🔔 SFX</button>
+      <button class="btn" id="btn-tutorial">🎓 Replay tutorial</button>
+      <button class="btn" id="btn-export">💾 Export save</button>
+      <button class="btn" id="btn-import">📥 Import save</button>
+      <button class="btn btn-danger" id="btn-newgame">🔄 New Game</button>
+    </div>
+    <h3>🏆 Milestones</h3>
+    <div id="milestones-list"></div>
+  </section>
+
+  <nav id="bottomnav">
+    <button id="nav-farm" class="navbtn">🌾<span>Farm</span></button>
+    <button id="nav-nursery" class="navbtn">🏠<span>Nursery</span></button>
+    <button id="nav-stand" class="navbtn">🧺<span>Stand</span></button>
+    <button id="nav-solarium" class="navbtn">☀️<span>Solarium</span></button>
+    <button id="nav-codex" class="navbtn">📖<span>Codex</span></button>
+    <button id="nav-menu" class="navbtn">⚙️<span>Menu</span></button>
+  </nav>
+
+</div>
+<script type="module" src="js/main.js?v=1"></script>
+</body>
+</html>
